@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fase 2</title>
+
+<style>
+body{
+    background:black;
+    color:white;
+    font-family:monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+.box{
+    border:2px solid #8a2be2;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 25px #8a2be2;
+    text-align:center;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow{
+    from{box-shadow:0 0 10px #8a2be2;}
+    to{box-shadow:0 0 25px #8a2be2;}
+}
+input{
+    display:block;
+    margin:10px auto;
+    padding:10px;
+    background:#111;
+    border:1px solid #8a2be2;
+    color:white;
+    border-radius:10px;
+}
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    background:black;
+    border:2px solid #8a2be2;
+    color:white;
+    border-radius:10px;
+    box-shadow:0 0 10px #8a2be2;
+    cursor:pointer;
+}
+.glitch{
+    animation: glitch 0.3s;
+}
+@keyframes glitch{
+    0%{transform:translate(0)}
+    20%{transform:translate(-5px,5px)}
+    40%{transform:translate(5px,-5px)}
+    60%{transform:translate(-5px,0)}
+    80%{transform:translate(5px,5px)}
+    100%{transform:translate(0)}
+}
+</style>
+
+</head>
+<body>
+<div class="box" id="box">
+<audio controls>
+<source src="audio.mp3">
+</audio>
+<input id="resp">
+<button onclick="check()">Confirmar</button>
+</div>
+
+<audio id="error" src="error.mp3"></audio>
+
+<script>
+function glitch(){
+box.classList.add('glitch');
+setTimeout(()=>box.classList.remove('glitch'),300);
+error.play();
+}
+
+function check(){
+let r=resp.value.toLowerCase().trim();
+if(r==='lagoinha'){
+window.location='fase3.html';
+}else{resp.value='';glitch();}
+}
+</script>
+</body>
+</html>

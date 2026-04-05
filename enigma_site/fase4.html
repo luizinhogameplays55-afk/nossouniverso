@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fase 4</title>
+
+<style>
+body{
+    background:black;
+    color:white;
+    font-family:monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+.box{
+    border:2px solid #8a2be2;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 25px #8a2be2;
+    text-align:center;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow{
+    from{box-shadow:0 0 10px #8a2be2;}
+    to{box-shadow:0 0 25px #8a2be2;}
+}
+input{
+    display:block;
+    margin:10px auto;
+    padding:10px;
+    background:#111;
+    border:1px solid #8a2be2;
+    color:white;
+    border-radius:10px;
+}
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    background:black;
+    border:2px solid #8a2be2;
+    color:white;
+    border-radius:10px;
+    box-shadow:0 0 10px #8a2be2;
+    cursor:pointer;
+}
+.glitch{
+    animation: glitch 0.3s;
+}
+@keyframes glitch{
+    0%{transform:translate(0)}
+    20%{transform:translate(-5px,5px)}
+    40%{transform:translate(5px,-5px)}
+    60%{transform:translate(-5px,0)}
+    80%{transform:translate(5px,5px)}
+    100%{transform:translate(0)}
+}
+</style>
+
+</head>
+<body>
+<div class="box" id="box">
+<img src="imagem2.png" width="300">
+<input id="a" placeholder="Água">
+<input id="b" placeholder="Proteínas">
+<input id="c" placeholder="Lipídios">
+<input id="d" placeholder="Carboidratos">
+<input id="e" placeholder="Minerais">
+<button onclick="check()">Confirmar</button>
+</div>
+
+<audio id="error" src="error.mp3"></audio>
+
+<script>
+function glitch(){
+box.classList.add('glitch');
+setTimeout(()=>box.classList.remove('glitch'),300);
+error.play();
+}
+
+function check(){
+if(a.value=='225'&&b.value=='60'&&c.value=='15'&&d.value=='3'&&e.value=='3'){
+window.location='final.html';
+}else{a.value='';b.value='';c.value='';d.value='';e.value='';glitch();}
+}
+</script>
+</body>
+</html>

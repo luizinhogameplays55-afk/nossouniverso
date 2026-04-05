@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Final</title>
+<style>
+body{
+background:black;
+color:white;
+font-family:monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+body::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:radial-gradient(white 1px, transparent 1px);
+background-size:40px 40px;
+opacity:0.2;
+animation:stars 20s linear infinite;
+}
+@keyframes stars{from{transform:translateY(0)}to{transform:translateY(-1000px)}}
+.box{
+position:relative;
+border:2px solid #8a2be2;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 25px #8a2be2;
+max-width:700px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<p>Você chegou até aqui. Seguiu rastros que não eram apenas números… mas memórias disfarçadas. Coordenadas que não apontavam para um lugar qualquer, e sim para o instante em que o mundo pareceu parar. Um ponto no espaço onde dois destinos se tocaram pela primeira vez… e não voltaram a ser os mesmos. E ainda assim, isso é só a superfície. Existe algo escondido entre linhas, entre tempos… como naquela cena do episódio 64, por volta dos 20 minutos. Um momento onde alguém tenta transformar sentimento em lógica, oferecer vida como se pudesse ser medida… como se o que é infinito coubesse em uma troca equivalente. Mas alguns segredos não obedecem regras. E alguns sentimentos… não aceitam equilíbrio. Se isso fosse uma transmutação, eu já teria errado o princípio desde o início. Porque não há círculo capaz de conter o que sinto, nem matéria que explique. Eu te ofereço meu coração, não em partes, não em cálculo, não em metade. Inteiro. Sem saber o que virá em troca… e, ao mesmo tempo, sabendo exatamente o que desejo. Porque no fim de todos esses caminhos que você percorreu… Nunca foi sobre encontrar respostas. Foi sobre me encontrar em você.</p>
+</div>
+</body>
+</html>
